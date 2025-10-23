@@ -5,6 +5,11 @@ from markov_absorbente import procesar_markov, graficar_matriz
 from funciones_colas import calcular_mm1, calcular_mmc, grafica_L_vs_lambda
 import base64
 
+st.sidebar.info("Proyecto final - Modelos Probabilísticos y Simulación\nAutor: Juan Aroca")
+st.markdown(
+    "<h2 style='text-align:center;color:#4CAF50;'>Simulador de Cadenas de Márkov (Absorbentes) y Modelos de Colas M/M/1 - M/M/c</h2>",
+    unsafe_allow_html=True
+)
 st.set_page_config(page_title="Simulador de Márkov y Colas", layout="wide")
 st.title("📊 Simulador de Cadenas de Márkov y Teoría de Colas")
 
