@@ -8,26 +8,10 @@ import base64
 st.set_page_config(page_title="Simulador de Márkov y Colas", layout="wide")
 
 st.sidebar.info("Proyecto final - Modelos Probabilísticos y Simulación\n\nAutor: Juan Carlos Aroca Valenzuela")
-st.markdown("""
-<style>
-    .stApp {
-        background-color: #F9F9F9;
-    }
-    h2, h3 {
-        color: #2E7D32;
-    }
-    .stButton>button {
-        background-color: #4CAF50;
-        color: white;
-        border-radius: 8px;
-        padding: 0.6em 1.2em;
-        border: none;
-    }
-    .stButton>button:hover {
-        background-color: #43A047;
-    }
-</style>
-""", unsafe_allow_html=True)
+st.markdown(
+    "<h2 style='text-align:center;color:#4CAF50;'>Simulador de Cadenas de Márkov (Absorbentes) y Modelos de Colas M/M/1 - M/M/c</h2>",
+    unsafe_allow_html=True
+)
 
 st.title("📊 Simulador de Cadenas de Márkov y Teoría de Colas")
 
