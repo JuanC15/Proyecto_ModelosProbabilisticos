@@ -7,7 +7,7 @@ import base64
 
 st.set_page_config(page_title="Simulador de Márkov y Colas", layout="wide")
 
-st.sidebar.info("Proyecto final - Modelos Probabilísticos y Simulación\nAutor: Juan Carlos Aroca Valenzuela Aroca")
+st.sidebar.info("Proyecto final - Modelos Probabilísticos y Simulación\n\nAutor: Juan Carlos Aroca Valenzuela")
 st.markdown(
     "<h2 style='text-align:center;color:#4CAF50;'>Simulador de Cadenas de Márkov (Absorbentes) y Modelos de Colas M/M/1 - M/M/c</h2>",
     unsafe_allow_html=True
