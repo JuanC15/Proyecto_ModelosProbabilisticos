@@ -17,7 +17,7 @@ st.title("📊 Simulador de Cadenas de Márkov y Teoría de Colas")
 
 tabs = st.tabs(["Cadenas de Márkov", "Teoría de Colas"])
 
-# --- TAB 1: Cadenas de Márkov ---
+#TAB 1: Cadenas de Márkov
 with tabs[0]:
     st.header("Cadenas de Márkov (Estados Absorbentes)")
     n = st.number_input("Número de estados:", min_value=2, max_value=10, value=3)
@@ -44,7 +44,7 @@ with tabs[0]:
         except Exception as e:
             st.error(f"Error: {e}")
 
-# --- TAB 2: Teoría de Colas ---
+#TAB 2: Teoría de Colas
 with tabs[1]:
     st.header("Modelos de Colas")
     modelo = st.radio("Selecciona el modelo:", ["M/M/1", "M/M/c"])

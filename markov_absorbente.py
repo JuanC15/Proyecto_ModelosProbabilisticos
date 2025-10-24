@@ -19,13 +19,26 @@ def procesar_markov(P):
     return Q, R, N, B, absorbentes, no_absorbentes
 
 def graficar_matriz(P):
-    plt.imshow(P, cmap='coolwarm', interpolation='nearest')
-    plt.colorbar(label='Probabilidad')
-    plt.title("Matriz de Transición")
-    plt.xlabel("Estado j")
-    plt.ylabel("Estado i")
-    
+    import seaborn as sns
+
+    fig, ax = plt.subplots(figsize=(6, 5))
+    sns.heatmap(
+        P,
+        annot=True,           
+        fmt=".2f",            
+        cmap="YlGnBu",        
+        cbar=True,
+        square=True,
+        linewidths=0.5,
+        linecolor='white',
+        ax=ax
+    )
+    ax.set_title("Matriz de Transición", fontsize=14, fontweight="bold", pad=15)
+    ax.set_xlabel("Estado j", fontsize=12)
+    ax.set_ylabel("Estado i", fontsize=12)
+    plt.tight_layout()
+
     buf = io.BytesIO()
-    plt.savefig(buf, format='png')
+    plt.savefig(buf, format='png', bbox_inches="tight", dpi=200)
     buf.seek(0)
     return base64.b64encode(buf.read()).decode()

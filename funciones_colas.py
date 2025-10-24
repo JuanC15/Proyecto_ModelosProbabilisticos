@@ -4,7 +4,7 @@ import base64
 import matplotlib.pyplot as plt
 import math
 
-# --- Modelo M/M/1 ---
+#Modelo M/M/1
 def calcular_mm1(lam, mu):
     if lam >= mu:
         return {"error": "El sistema es inestable (λ ≥ μ)"}
@@ -23,17 +23,17 @@ def calcular_mm1(lam, mu):
         "Wq (Tiempo promedio en cola)": Wq,
     }
 
-# --- Modelo M/M/c ---
+#Modelo M/M/c
 def calcular_mmc(lam, mu, c):
     rho = lam / (c * mu)
     if rho >= 1:
         return {"error": "El sistema es inestable (ρ ≥ 1)"}
 
-    # Cálculo de P0
+    #Cálculo de P0
     suma = sum([(c * rho) ** n / math.factorial(n) for n in range(c)])
     P0 = 1 / (suma + ((c * rho) ** c / (math.factorial(c) * (1 - rho))))
 
-    # Lq y L
+    #Lq y L
     Lq = (P0 * ((c * rho) ** c) * rho) / (math.factorial(c) * (1 - rho) ** 2)
     L = Lq + (lam / mu)
     Wq = Lq / lam
@@ -48,7 +48,7 @@ def calcular_mmc(lam, mu, c):
         "W (Tiempo promedio en el sistema)": W,
     }
 
-# --- Gráfica L vs λ ---
+#Gráfica L vs λ
 def grafica_L_vs_lambda(mu, modelo="M/M/1", c=1):
     lambdas = np.linspace(0.1, mu - 0.1, 50)
     Ls = []
@@ -68,7 +68,7 @@ def grafica_L_vs_lambda(mu, modelo="M/M/1", c=1):
     ax.legend()
     ax.grid(True)
 
-    # Convertir a imagen base64
+    #Convertir a imagen base64
     buf = io.BytesIO()
     plt.savefig(buf, format="png")
     buf.seek(0)
